@@ -223,7 +223,7 @@ Now, we can compile and run Cargo with command,
 	> $ cargo run
 	>      Fresh hello_class v0.1.0 (file:///path/to/package/hello_class)
 	>    Running `target/hello_world`
-	> Hello, world!
+	> Hello, class CSCI3055!!
 
 For information about installing Rust and Cargo package manager:  https://www.rust-lang.org/tools/install
 
@@ -232,8 +232,149 @@ For information about installing Rust and Cargo package manager:  https://www.ru
 
 ## About the standard library
 
-> _Give some examples of the functions and data structures
-> offered by the standard library_.
+The Rust Standard Library provides the convenient high level abstractions by which a majority of Rust softwares are created with. It provides constructive features such as the Vec, Iterator, Option, Result, and String, hashmap types; a vast amount of methods for language primitives; a large number of standard macros; I/O and multithreading support; heap allocations with Box; and many more high level features.
+
+### Vector
+
+The first collection type we’ll look at is Vec<T>, also known as a Vector. Vector allows you to store more than one value in a *single data structure* that puts all the values next to each other in memory.
+
+**Initializing Vectors**
+
+To create an empty vector, we can call the Vec::new function:
+
+`let samplevec: Vec<i32> = Vec::new();  i32 refers to the 32-bit signed integer type`
+
+You rarely need to do this type of annotation. More commonly, you only have to create a Vec<T> that has initial values, and Rust provides the vec! macro for convinience. It will create a new vector that holds values of the type you give it. <br>
+For example the exmaple below initializes a vector of 32-bit signed interger type:
+
+`let samplevec = vec![1, 3, 5];`
+
+**Pushing and Getting elements**
+
+Let's see how we can add to a vector and retrieve an element at specific index,
+```
+let mut samplevec = vec![1, 3, 5];
+samplevec.push(7);
+samplevec.push(9);
+samplevec.push(11);
+let third = &samplevec[2];
+println!("The third element is: {}", third);
+```
+**Iterating over Vectors**
+
+The code shows how to use a for loop to get immutable references to each element in a vector of i32 values and print them:
+```
+let samplevec = vec![55, 8, 91];
+for i in &samplevec {
+    println!("{}", i);
+}
+```
+If you wish to mutate these integer values instead use, 'for i in &mut v' also initialize the Vector as mutable.
+
+### String
+
+The String type, which is provided by Rust’s standard library rather than coded into the core language, is a growable, mutable, owned, UTF-8 encoded string type. Let's look at few examples of String type usage,
+```
+let mut samplestr = String::new();
+let samplestr = String::from("some stuffs");
+```
+
+**Adding two strings together,**
+```
+let mut samplestr1 = String::from("My name is ");
+let samplestr2 = "Jude";
+samplestr1.push_str(samplestr2);
+let samplestr3 = samplestr1 + &samplestr2;  // using concatenation with operator + also s1 cannot been used anymore
+println!("samplestr1 is {}", samplestr1);
+println!("samplestr3 is {}", samplestr3);
+```
+
+**Iterating over a string,**
+```
+for c in "simba".chars() {   // .bytes() returns each raw byte
+    println!("{}", c);
+}
+```
+The above code splits the string into characters, and you can iterate over the result in order to access each element!
+
+### Map
+
+The type HashMap<K, V> stores a mapping of keys of type K to values of type V. It does this via a hashing function, which determines how it places these keys and values into memory. 
+
+**Creating a Hash Map**
+
+You can create an empty hash map with new and add elements with insert,
+```
+use std::collections::HashMap;
+
+let mut grades = HashMap::new();
+
+scores.insert(String::from("Jude"), 85);
+scores.insert(String::from("Judit"), 58)
+```
+
+**Ownership**
+
+For types that implement the Copy trait, i.e. i32, the values are copied into the hash map. For owned values like String, the values will be moved and the hash map will be the owner of those values. E.g.
+```
+use std::collections::HashMap;
+
+let field_name = String::from("Favorite color");
+let field_value = String::from("Blue");
+
+let mut map = HashMap::new();
+map.insert(field_name, field_value);
+```
+
+**Accessing and Updating values in a hash map**
+
+We can get a value out of the hash map by providing its key to the get method,
+	
+	Assume the code below is part of the grades code we mentioned in the beginning (uses grades HashMap)
+```
+let topstudent = String::from("Jude");
+let grade = grades.get(&topstudent);
+```
+
+Here, grade will have the value scored by student "Jude", and the result will be Some(&85). The result is wrapped in Some because get returns an Option<&V>; if there’s no value for that key in the hash map, get will return None. The program will need to handle the Option!
+
+We can iterate over each key/value pair in a hash map in a similar manner as we do with vectors, using a for loop:
+
+```
+for (key, value) in &grades {
+    println!("{}: {}", key, value);
+}
+```
+
+The following code will replace/update the value of a particular key,
+```
+scores.insert(String::from("Jude"), 95);
+println!("{:?}", scores);
+```
+
+Vectors, strings, and hash maps will provide a large amount of functionality necessary in programs when you need to store, access, and modify data.
+
+Let's take a look at two more librares used extensively by Rust developers for handling files,
+
+```
+use std::env;
+use std::fs;
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    println!("{:?}", args);
+    let filename = args;
+    println!("In file {}", filename);
+
+    let contents = fs::read_to_string(filename)
+        .expect("Error! Cannot read file.");
+
+    println!("With text:\n{}", contents);
+}
+```
+
+The std::env mentioned above allows the use of command line arguments and use statement to bring in a relevant part of the standard library: we need std::fs to handle files
+
 
 ## About open source library
 
