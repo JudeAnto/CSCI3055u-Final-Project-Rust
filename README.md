@@ -13,8 +13,7 @@ Performance of Rust is oftentimes compared to that of C-like languages.
 ## History
 
 > Rust is fairly a new language relative to its predecessors, e.g. C, which preceded it by 38 years. Rust is considered to be a breed of C-type language, but with advanced features which creates significant advantages over its ancestors.
-
-First, Rust is heavily inspired by Cyclone (a safe dialect of C and a fundamental language), with some aspects of object-oriented features from C++. But, it also includes functional features from languages like Haskell and OCaml. The result is a C-like language that supports multiparadigm programming (imperative, functional, and object oriented). Rust is sponsored by Mozilla Research.
+Notably, Rust is heavily inspired by Cyclone (a safe dialect of C and a fundamental language), with some aspects of object-oriented features from C++. But, it also includes functional features from languages like Haskell and OCaml. The result is a C-like language that supports multiparadigm programming (imperative, functional, and object oriented). Rust is sponsored by Mozilla Research.
 >
 
 ## Some interesting features:
