@@ -1,7 +1,7 @@
-# _Your project title_
+# CSCI3055U Final Project on Rust Language
 
-- _your name_
-- _your email (uoit.net)_
+- _Jude Antonyrajan_
+- _jude.antonyrajan@uoit.net_
 
 ## About the language
 
