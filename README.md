@@ -1,4 +1,4 @@
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@ <br> THIS IS INCOMPLETE, PLEASE DO NOT MARK THIS! I WILL BE SUBMITTING THIS A DAY LATE BEFORE MIDNIGHT TODAY! <br> @@@@@@@@@@@@@@@@@@@@@@@@@@@
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@ <br> THIS IS INCOMPLETE, PLEASE DO NOT GRADE THIS YET! I WILL BE SUBMITTING THIS A DAY LATE BEFORE MIDNIGHT TODAY! <br> @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 # CSCI3055U Final Project on Rust Language
 
@@ -165,10 +165,70 @@ fn main() {
 	theatre();
 }
 ```
+<br>
 
 ## About the tools
 
-> _Describe the compiler or interpreter needed_.
+### What is rustc?
+
+"rustc" is the compiler for the Rust programming language, provided by the project itself. Compilers take your source code and produce binary code, either as a library or executable.
+
+Most Rust programmers don't invoke rustc directly, but instead do it through Cargo.
+
+**Basic Usage**
+
+Let's say we have a 'hello class' method in a file class.rs:
+```
+fn main() {
+    println!("Hello, class CSCI3055!");
+}
+```
+
+To turn this source code into an executable, you can use rustc as follows (e.g. for windows):
+
+	> $ rustc class.rs
+	> $ .\class.exe      OR      simply $ class
+
+
+Now let's look at how efficeintly this can be done using Cargo. Cargo is the Rust package manager. Cargo downloads your Rust package’s dependencies, compiles your packages and makes distributable packages.
+
+To start a new package with Cargo:
+
+	> $ cargo new hello_class
+
+	> $ cd hello_class
+	> $ tree .
+	> .
+	> ├── Cargo.toml
+	> └── src
+	>     └── main.rs
+
+Cargo.tomla is the manifest, and it contains all of the metadata that Cargo needs to compile your package.
+
+	> [package]
+	> name = "hello_class"
+	> version = "0.1.0"
+	> authors = ["Your Name <you@example.com>"]
+
+Let's write our 'hello class' function in main.rs,
+
+	> src/main.rs
+```
+fn main() {
+    println!("Hello, class CSCI3055!");
+}
+```
+Now, we can compile and run Cargo with command,
+
+	> $ cargo run
+	>      Fresh hello_class v0.1.0 (file:///path/to/package/hello_class)
+	>    Running `target/hello_world`
+	> Hello, world!
+
+For information about installing Rust and Cargo package manager:  https://www.rust-lang.org/tools/install
+
+<br>
+
 
 ## About the standard library
 
