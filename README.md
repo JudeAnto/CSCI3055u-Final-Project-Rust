@@ -375,11 +375,49 @@ fn main() {
 
 The std::env mentioned above allows the use of command line arguments and use statement to bring in a relevant part of the standard library: we need std::fs to handle files
 
+<br>
+
+
 
 ## About open source library
 
-> _Describe at least one contribution by the open source
-community written in the language._
+Rust lanuage is community driven and aids wide range of open source projects. Support for embedded systems is driven by a best-in-class open source community, with support from commercial partners.
+
+Let's look at few trending open source libraries/projects developed by the community,
+
+### ripgrep (rg)
+
+ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern while respecting your gitignore rules. ripgrep has first class support on Windows, macOS and Linux, with binary downloads available for every release. ripgrep is similar to other popular search tools like The Silver Searcher, ack and grep.
+
+__source link:__  https://github.com/BurntSushi/ripgrep
+
+### fd
+
+fd is a simple, fast and user-friendly alternative to find.<br>
+While it does not seek to mirror all of find's powerful functionality, it provides sensible (opinionated) defaults for 80% of the use cases.
+
+**Features**
+ - Convenient syntax: fd PATTERN instead of find -iname '*PATTERN*'.
+ - Colorized terminal output (similar to ls) and he command name is 50% shorter* than find!
+ - It's fast and has regular expressions.
+ - Smart case: the search is case-insensitive by default. It switches to case-sensitive if the pattern contains an uppercase character*.
+ - Ignores hidden directories and files, by default and ignores patterns from your .gitignore, by default.
+
+__source link:__  https://github.com/sharkdp/fd
+
+### Yew
+
+Yew is a modern Rust framework inspired by Elm and ReactJS for creating multi-threaded frontend apps with WebAssembly.
+The framework supports multi-threading & concurrency out of the box. It uses Web Workers API to spawn actors (agents) in separate threads and uses a local scheduler attached to a thread for concurrent tasks.
+
+__source link:__  https://github.com/DenisKolodin/yew
+
+<br>
+
+
+<br>
+
+
 
 # Analysis of the language
 
