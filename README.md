@@ -444,11 +444,21 @@ Macros open the door to reaching some goals that are acclaimed to the Rustic way
 
 4. *Give example of scoping rules supported by the language: lexical vs dynamic scoping?*
 
-5. *Explain functional programming constructs either as part of the language or supported by the standard library of the runtime?*
+
+5. *Explain functional programming constructs either as part of Rust or supported by the standard library of the runtime?*
+> Rust’s design is heavily influenced by existing languages and techniques, and one eminent influence is "functional programming". Programming in a functional style often includes using functions as values by passing them in arguments, returning them from other functions, assigning them to variables for later execution, and so forth. Few examples of functional constructs in Rust are,
+> - closures: a function-like construct you can store in a variable, `example_closure = |x| x;`
+> - iterators: a way of processing a series of elements, `samplevector.iter()`
+> - pattern matching: match against literals directly using arms
+> - enum:  allows the creation of a type which may be one of a few different variants
 
 6. *What is the type system of Rust: static vs dynamic types?*
+> Rust is static type intensive language where you cannot add or remove objects at runtime. For example, a predefined struct is a static data structure, as we cannot add or remove keys at runtime. Therefore making it more secure in preserving anonymity and protecting data.
+`let x = vec![1,2,3,4];` is 'static, but `let x = vec![&1,&2,&3,&4]` isn't, since the latter is a `Vec<&'a int>`
 
 7. *What are some of the strengths and weaknesses of the language?*
+> Rust is a great language because it is a systems language in that it gives you the level of flexibility and control you get with a language like C or C++, but at the same time it is safe by default (immense security). It has a good type system, and a powerful concept around memory management: no memory leak nor null pointer exception and db connections!
 
+> However, Rust is a bit harder to learn (although its syntax is relatively simple), has different concepts that must sink in your mind before becoming proficient.  Rust is very explicit, as it throws a lot of wrenches in their path, ownership/borrowing, failures that must be dealt with immediately (rather than exceptions that can be ignored). Also, it currently doesn’t have a lot of open source libs in comparison to other large scale langaues such as Java and C++. Overall, rust is somewhat unfriendly to beginners, however if you put the time and effort, its performance and reliability will soon grow on you!
 
 
