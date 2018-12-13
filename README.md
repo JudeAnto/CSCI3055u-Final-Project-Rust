@@ -1,8 +1,8 @@
-# @@@@@@@@@@@@@@@@@@@@@@@@@@@ <br> THIS IS INCOMPLETE, PLEASE DO NOT GRADE THIS YET! I WILL BE SUBMITTING THIS A DAY LATE BEFORE MIDNIGHT TODAY! <br> @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 # CSCI3055U Final Project on Rust Language
 
 - _Jude Antonyrajan_
+- _100571023_
 - _jude.antonyrajan@uoit.net_
 
 ## Introduction
@@ -319,11 +319,11 @@ For types that implement the Copy trait, i.e. i32, the values are copied into th
 ```
 use std::collections::HashMap;
 
-let field_name = String::from("Favorite color");
-let field_value = String::from("Blue");
+let fkey = String::from("Best Film");
+let fvalue = String::from("Intestellar");
 
 let mut map = HashMap::new();
-map.insert(field_name, field_value);
+map.insert(fkey, fvalue);
 ```
 
 **Accessing and Updating values in a hash map**
@@ -424,11 +424,9 @@ __source link:__  https://github.com/DenisKolodin/yew
 The following questions and answers will carefully identify and assist you in comprehending the language, and to assess if it fits your programming criteria,
 
 1. *What is the style of programming supported by the language: functional vs procedural programming?*
-
 > Rust is a systems programming language supporting both functional and imperative (continuations, do notation for state monads) paradigms. Most of the core design tenants are derived from functional paradigms, including, but not limited to pattern matching, immutability, closures, algebraic data types etc... They have taken some aspects of object orientation (i.e. self) to allow for nice encapsulation. In the end it's the best of both worlds (Imperative & Functional).
 
 2. *How is its ability to perform meta-programming such as macros?*
-
 > Macros are code that manipulates code. Rust supports extensive metaprogramming via macros. 
 Macros open the door to reaching some goals that are acclaimed to the Rustic way of programming:
 
@@ -438,12 +436,11 @@ Macros open the door to reaching some goals that are acclaimed to the Rustic way
 
 > To reach these goals, Rust includes two types of macros, function-like and attribute-like.
 
-3. *Provide details of symbol resolution and its support for closure?*
+3. *Provide details of Rusts support for closure?*
+> Rust’s closures are concealed functions you can save in a variable or pass as arguments to other functions. You can construct the closure in one place and then call the closure to assess it in a different context. Unlike functions, closures can capture values from the scope in which they’re defined. Closures allow a function to be extended, which is very effective! Without changing a function, so long as that function takes a closure, the caller is able to extend the effectiveness of that function in a non-breaking way.
 
->
-
-4. *Give example of scoping rules supported by the language: lexical vs dynamic scoping?*
-
+4. *Give example of scoping rules supported by Rust: lexical vs dynamic scoping?*
+> Scopes play an important part in RAII, ownership, borrowing, and lifetimes. That is, they indicate to the Rust compiler when borrows are valid, when resources can be freed, and when variables are created or destroyed. The lifetime of a reference can be bound to a lexical scope or a lifetime can be non-lexical.
 
 5. *Explain functional programming constructs either as part of Rust or supported by the standard library of the runtime?*
 > Rust’s design is heavily influenced by existing languages and techniques, and one eminent influence is "functional programming". Programming in a functional style often includes using functions as values by passing them in arguments, returning them from other functions, assigning them to variables for later execution, and so forth. Few examples of functional constructs in Rust are,
@@ -457,7 +454,7 @@ Macros open the door to reaching some goals that are acclaimed to the Rustic way
 `let x = vec![1,2,3,4];` is 'static, but `let x = vec![&1,&2,&3,&4]` isn't, since the latter is a `Vec<&'a int>`
 
 7. *What are some of the strengths and weaknesses of the language?*
-> Rust is a great language because it is a systems language in that it gives you the level of flexibility and control you get with a language like C or C++, but at the same time it is safe by default (immense security). It has a good type system, and a powerful concept around memory management: no memory leak nor null pointer exception and db connections!
+> Rust is a great because it is a systems language in that it gives you the level of flexibility and control you get with a language like C or C++, but at the same time it is safe by default (immensely security focused). It has a good type system, and a powerful concept around memory management: no memory leak nor null pointer exception and db connections!
 
 > However, Rust is a bit harder to learn (although its syntax is relatively simple), has different concepts that must sink in your mind before becoming proficient.  Rust is very explicit, as it throws a lot of wrenches in their path, ownership/borrowing, failures that must be dealt with immediately (rather than exceptions that can be ignored). Also, it currently doesn’t have a lot of open source libs in comparison to other large scale langaues such as Java and C++. Overall, rust is somewhat unfriendly to beginners, however if you put the time and effort, its performance and reliability will soon grow on you!
 
