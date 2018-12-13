@@ -43,7 +43,7 @@ for c in "simba".chars() {   // .bytes() returns each raw byte
 }
 ```
 
-## Map - creation of HasMap, ownership, accessing & updating
+## Map - creation of HashMap, ownership, accessing & updating
 
 ```
 use std::collections::HashMap;
