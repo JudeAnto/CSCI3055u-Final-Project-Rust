@@ -421,7 +421,34 @@ __source link:__  https://github.com/DenisKolodin/yew
 
 # Analysis of the language
 
-> _Organize your report according to the project description
-document_.
+The following questions and answers will carefully identify and assist you in comprehending the language, and to assess if it fits your programming criteria,
+
+1. *What is the style of programming supported by the language: functional vs procedural programming?*
+
+> Rust is a systems programming language supporting both functional and imperative (continuations, do notation for state monads) paradigms. Most of the core design tenants are derived from functional paradigms, including, but not limited to pattern matching, immutability, closures, algebraic data types etc... They have taken some aspects of object orientation (i.e. self) to allow for nice encapsulation. In the end it's the best of both worlds (Imperative & Functional).
+
+2. *How is its ability to perform meta-programming such as macros?*
+
+> Macros are code that manipulates code. Rust supports extensive metaprogramming via macros. 
+Macros open the door to reaching some goals that are acclaimed to the Rustic way of programming:
+
+> - Constructing redundant or insignificant code instead of letting the developer write it by hand.
+> - Extending the language, for experimenting before new syntax is added properly, or filling gaps in the language.
+> - Optimizing performance, by doing at compile-time what could be done at run-time.
+
+> To reach these goals, Rust includes two types of macros, function-like and attribute-like.
+
+3. *Provide details of symbol resolution and its support for closure?*
+
+>
+
+4. *Give example of scoping rules supported by the language: lexical vs dynamic scoping?*
+
+5. *Explain functional programming constructs either as part of the language or supported by the standard library of the runtime?*
+
+6. *What is the type system of Rust: static vs dynamic types?*
+
+7. *What are some of the strengths and weaknesses of the language?*
+
 
 
